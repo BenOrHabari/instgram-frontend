@@ -10,7 +10,7 @@ export default function Post({post}: {post?: IPost}) {
     const [dynamicPost, setDynamicPost] = useState({title:'', id:''});
     useEffect(() => {
         async function setDynamicData() {
-            setDynamicPost(await getJson(`./data/posts.json`))            
+            setDynamicPost(await getJson(`./data/posts.123.json`))            
         }
 
         if(!post){
