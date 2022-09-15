@@ -15,9 +15,8 @@ root.render(
     <HashRouter>
       <Routes>
         <Route path='/' element={<App></App>}>
-          <Route path='feed' element={<Feed></Feed>} />
-          {/* <Route path='user' element={<User></User>} /> */}
-          <Route path='post/:postId' element={<Post></Post>} />
+          <Route path='feed' element={<Feed></Feed>} /> 
+          <Route path='posts/:postId' element={<Post></Post>} />
         </Route>
       </Routes>
     </HashRouter>

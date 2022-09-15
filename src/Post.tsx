@@ -20,7 +20,7 @@ export default function Post({post}: {post?: IPost}) {
         };
     }, [post, params.postId])
     return <div>
-      <h2><Link to={`/post/${post?.id}`}>{post?.title || dynamicPost?.title}</Link></h2>
+      <h2><Link to={`/posts/${post?.id}`}>{post?.title || dynamicPost?.title}</Link></h2>
       <p>Num likes {numLikes}</p>
       <Like onLike={ () => addLike(numLikes + 1) }>
         <span>Like</span>

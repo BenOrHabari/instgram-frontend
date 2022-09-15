@@ -13,8 +13,7 @@ function App() {
     <nav>
       <ul>
         <li><Link to={`/feed`}>Feed</Link></li>
-        <li><Link to={`/user`}>User</Link></li>
-        <li><Link to={`/post/456`}>Post</Link></li>
+        <li><Link to={`/posts/456`}>Post</Link></li>
       </ul>
     </nav>
     <Outlet></Outlet>
