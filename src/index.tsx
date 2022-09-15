@@ -3,13 +3,24 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { HashRouter, Route, Routes } from 'react-router-dom';
+import Feed from './Feed';
+import Post from './Post';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <HashRouter>
+      <Routes>
+        <Route path='/' element={<App></App>}>
+          <Route path='feed' element={<Feed></Feed>} />
+          {/* <Route path='user' element={<User></User>} /> */}
+          <Route path='post/:postId' element={<Post></Post>} />
+        </Route>
+      </Routes>
+    </HashRouter>
   </React.StrictMode>
 );
 
