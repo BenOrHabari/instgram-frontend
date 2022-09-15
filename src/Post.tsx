@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import {useParams} from "react-router-dom";
 
 async function getJson(url: string) {
     const res = await fetch(url);
@@ -8,15 +9,16 @@ async function getJson(url: string) {
 export default function Post({post}: {post?: IPost}) {
     const [numLikes, addLike] = useState(0);
     const [dynamicPost, setDynamicPost] = useState({title:'', id:''});
+    const params = useParams();
     useEffect(() => {
         async function setDynamicData() {
-            setDynamicPost(await getJson(`./data/posts.123.json`))            
+            setDynamicPost(await getJson(`./data/post.${params.postId}.json`))            
         }
 
         if(!post){
             setDynamicData();
         };
-    }, [post])
+    }, [post, params.postId])
     return <div>
       <h2>{post?.title || dynamicPost?.title}</h2>
       <p>Num likes {numLikes}</p>

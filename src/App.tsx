@@ -14,7 +14,7 @@ function App() {
       <ul>
         <li><Link to={`/feed`}>Feed</Link></li>
         <li><Link to={`/user`}>User</Link></li>
-        <li><Link to={`/post`}>Post</Link></li>
+        <li><Link to={`/post/123`}>Post</Link></li>
       </ul>
     </nav>
     <Outlet></Outlet>
