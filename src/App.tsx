@@ -1,25 +1,12 @@
 import React from 'react';
-import './App.css';
-import { Link, Outlet } from "react-router-dom";
-
-async function getJson(url: string) {
-  const res = await fetch(url);
-  return res.json();
-};
+import { Outlet } from "react-router-dom";
+import { Header } from "./Header/Header"
 
 function App() {
-  return <div>
-    Hello
-    <nav>
-      <ul>
-        <li><Link to={`/feed`}>Feed</Link></li>
-        <li><Link to={`/posts/456`}>Post</Link></li>
-      </ul>
-    </nav>
+  return <>
+  <Header></Header>
     <Outlet></Outlet>
-  </div>;
+  </>;
 }
-
-
 
 export default App;

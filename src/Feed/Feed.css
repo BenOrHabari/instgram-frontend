@@ -1,0 +1,21 @@
+.Feed ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Feed li {
+    border: 1px solid;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    max-width: 70%;
+    position: relative;
+    margin: 2%;
+    width: 60%;
+    min-height: 50%;
+    display: flex;
+    padding: 0;
+}

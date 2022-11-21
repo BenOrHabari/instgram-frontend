@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
-import { Outlet } from "react-router-dom";
-import Post from "./Post";
+import {Post} from "../Post/Post";
+import './Feed.css';
 
 async function getJson(url: string) {
     const res = await fetch(url);
@@ -10,15 +10,15 @@ async function getJson(url: string) {
 export default function Feed() {
     const [posts, setPosts] = useState([{title: `Loading your feed`, id: ``}]);
     const [page, setPage] = useState(0);
-    let [likedPostId, setLikePostId] = useState('')
+    // let [likedPostId, setLikePostId] = useState('')
     useEffect(() => {
       async function setData(){
         setPosts(await getJson(`./data/posts.json?page=${page}`));
-      }
+      };
       setData();
     }, [page]);
   
-    return <div>
+    return <div className="Feed">
       <ul>
         {posts.map((post, i) => <li key={i}>
           <Post post={post}></Post>

@@ -1,3 +1,1 @@
-[
-    { "title": "FANGOOOLI", "id": "123" }
-]
+{ "title": "FANGOOOLI", "id": "123", "photo": "../../photos/123.webp" }
