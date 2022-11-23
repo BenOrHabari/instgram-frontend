@@ -8,7 +8,7 @@ async function getJson(url: string) {
 };
 
 export default function Feed() {
-    const [posts, setPosts] = useState([{title: `Loading your feed`, id: ``}]);
+    const [posts, setPosts] = useState([{title: `Loading your feed`, id: ``, photo: './'}]);
     const [page, setPage] = useState(0);
     // let [likedPostId, setLikePostId] = useState('')
     useEffect(() => {

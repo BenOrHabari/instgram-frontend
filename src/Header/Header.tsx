@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import './Header.css'
 
 function Header() {
-  return <div>
-    Hello
+  return <div id='Menu'>
     <nav>
       <ul className='navigation'>
         <li><Link to={`/feed`}>Feed</Link></li>

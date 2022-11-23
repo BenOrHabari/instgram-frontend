@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useParams, Link} from "react-router-dom";
 import './Post.css';
+declare module "*.jpg";
 
 async function getJson(url: string) {
     const res = await fetch(url);
@@ -11,9 +12,9 @@ function Post({post}: {post: IPost}){
     const [numLikes, addLike] = useState(0);
     // debugger
     return <div id="Post">
-    <h2><Link to={`/posts/${post?.id}`}>{post.title}</Link></h2>
+    <h2 id="PostTitle"><Link to={`/posts/${post?.id}`}>{post.title}</Link></h2>
     <div id="Photo">
-        <img src="/123.jpg" alt="your image" />
+        <img id="PostPhoto" src= {`./${post.id}.jpg`} alt="your image" />
     </div>
     <div id='LikesAndDescription'>
         <p>Num likes {numLikes}</p>
@@ -25,7 +26,7 @@ function Post({post}: {post: IPost}){
 };
 
  function PostContainer() {
-    const [dynamicPost, setDynamicPost] = useState({title:'', id:''});
+    const [dynamicPost, setDynamicPost] = useState({title:'', id:'', photo: ''});
     const params = useParams();
     useEffect(() => {
         async function setDynamicData() {
@@ -34,13 +35,15 @@ function Post({post}: {post: IPost}){
         setDynamicData();
 
     }, [params.postId]);
-    return <Post post={dynamicPost}></Post>
+    return <div id="PostAlone">
+        <Post post={dynamicPost}></Post>
+    </div>
 };
 
 interface IPost {
     id: string;
     title: string;
-    photo?: string;
+    photo: string;
 };
 
 
